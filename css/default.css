@@ -1,0 +1,381 @@
+﻿
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    display: -ms-flexbox;
+    -ms-flex-direction: row;
+    background-color: #f2f2f2;
+}
+
+#title {
+    position: absolute;
+    margin-top: 40px;
+    left: 117px;
+    color: #2364ab;
+}
+
+.win-backbutton {
+    color: #2364ab;
+    border-color: #2364ab;
+}
+
+.win-backbutton:hover {
+    color: #2364ab;
+    border-color: #2364ab;
+}
+
+#userTitle img {
+    float: left;
+    margin-right: 10px;
+}
+
+#usertitle .userMessage {
+    float: left;
+}
+
+#kcyDetails h2 {
+    margin-bottom: 20px;
+}
+
+#kcyDetails h3 {
+    font-size: 16pt;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.statsModule span {
+    background: #5692D5;
+    padding: 30px;
+    margin: 10px 10px 0 0;
+    width: 120px;
+    display: inline-block;
+    color: white;
+    font-size: xx-large;
+}
+
+#userStats {
+    width: 400px;
+}
+
+#kcyDetails {
+    width: auto;
+    margin-right: 40px;
+}
+
+
+.statsModule {
+    color: #5692D5;
+    margin-top: 140px;
+    margin-left: 120px;
+}
+
+    .statsModule span.large {
+        width: auto;
+        background: #5692D5;
+        padding: 30px;
+        margin: 10px 10px 0 0;
+        display: inline-block;
+        color: white;
+        font-size: xx-large;
+    }
+
+#userstats > div {
+    margin-top: 10px;
+}
+
+#morestats {
+    color: #5692D5;
+    width: 400px;
+    margin-top: 140px;
+    margin-left: 20px;
+}
+
+    #morestats > div {
+        margin-top: 10px;
+    }
+
+    #morestats ul {
+        list-style-type: none;
+        font-size: xx-large;
+    }
+
+#account {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    margin: 40px;
+    text-align: right;
+    color: #5692D5;
+    padding-left: 5px;
+}
+
+    #account:hover {
+        background: #ddd;
+    }
+
+    #account img {
+        margin: 5px;
+        width: 48px;
+        height: 48px;
+    }
+
+    #account .loginMessage {
+        float: left;
+    }
+
+    #account a {
+        color: #5692D5;
+    }
+
+        #account a small {
+            font-size: 12pt;
+        }
+
+#firewords {
+    color: #5692D5;
+    width: 220px;
+    margin-top: 140px;
+    margin-left: 120px;
+}
+
+    #firewords > div {
+        margin-top: 10px;
+    }
+
+
+progress.withText {
+    color: inherit; /* Uses the same text color as the page */
+    vertical-align: text-bottom; /* Makes the bottom of the control align with the bottom of its label */
+}
+
+/* Text style for a label for the progress ring */
+.progressRingText {
+    font-family: "Segoe UI";
+}
+
+/* Text style for a label for a default size progress ring */
+.progressRingText {
+    font-size: 11pt;
+    line-height: 15pt;
+}
+
+    /* The margin to separate the ring and its label */
+    .progressRingText progress {
+        margin-right: 5px;
+    }
+
+#main_title {
+    color: #5692D5;
+    margin-top: 140px;
+    margin-left: 120px;
+}
+
+#main_loading {
+    margin-top: 180px;
+    margin-left: -45px;
+    clear: both;
+}
+
+#main-snapped {
+    display: none;
+}
+
+#main {
+    margin-top: 210px;
+    margin-left: -45px;
+    margin-bottom: 40px;
+    columns: 520px;
+    color: white;
+}
+
+    #main a {
+        color: white;
+    }
+
+        #main a:active {
+            color: blue;
+            background: red;
+        }
+
+    #main h2 {
+        color: #5692D5;
+    }
+
+    #main > ul {
+        list-style-type: none;
+        display: inline;
+    }
+
+        #main > ul > li {
+            width: 100%;
+            display: inline-block;
+        }
+
+.kcyGrid {
+    display: -ms-grid;
+    -ms-grid-columns: auto 1fr;
+    -ms-grid-rows: 1fr auto;
+    margin: 5px 5px 5px -5px;
+    background: #5692D5;
+    border: 3px solid #f2f2f2;
+}
+
+    .kcyGrid:hover {
+        border: 3px solid #bbb;
+    }
+
+    .kcyGrid:active {
+        background: blue;
+    }
+
+.shares {
+    padding: 0 10px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    font-size: 42pt;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+    .shares p {
+        font-weight: lighter;
+    }
+
+
+
+.text {
+    padding: 5px;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+    .text h1 {
+        font-size: x-large;
+        margin: 5px;
+        vertical-align: middle;
+    }
+
+    .text a {
+        color: white;
+    }
+
+.sharedby {
+    border-top: 1px dotted #eee;
+    padding: 0 5px;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+}
+
+    .sharedby img:first-child {
+        margin-left: 5px;
+    }
+
+    .sharedby img {
+        width: 40px;
+        height: 40px;
+        margin: 10px 0;
+    }
+
+.actions {
+    border-top: 1px dotted #eee;
+    padding: 5px;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+}
+
+    .actions a:first-of-type {
+        border-left: none;
+    }
+
+    .actions a {
+        border-left: 1px dotted #eee;
+    }
+
+
+/*Media queries fun*/
+@media screen and (max-width: 800px) {
+    #firewords {
+        display: none;
+    }
+
+    #title h1 {
+        font-size: 30pt;
+        margin-top: 18px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #firewords {
+        display: none;
+    }
+
+    .statsModule {
+    color: #5692D5;
+        margin-top: 140px;
+        margin-left: 40px;
+    }
+
+    #main_title {
+    color: #5692D5;
+    margin-top: 140px;
+    margin-left: 40px;
+    }
+
+    #title h1 {
+        font-size: 30pt;
+        margin-top: 18px;
+        margin-left: -80px;
+    }
+
+    #account {
+        display: none;
+    }
+
+    #main-snapped {
+        display: block;
+        margin-top: 210px;
+        margin-left: -45px;
+        margin-right: 25px;
+        margin-bottom: 40px;
+    }
+
+    #main {
+        display: none;
+    }
+
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    #main-snapped a {
+        color: white;
+    }
+
+        #main-snapped a:active {
+            color: blue;
+            background: red;
+        }
+
+    #main-snapped h2 {
+        color: #5692D5;
+    }
+
+    #main-snapped > ul {
+        list-style-type: none;
+        display: inline;
+    }
+
+        #main-snapped > ul > li {
+            width: 100%;
+            display: inline-block;
+        }
+}

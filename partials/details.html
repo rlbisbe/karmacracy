@@ -1,0 +1,32 @@
+﻿<div id="account" ng-style="{'visibility': logged_in}">
+    <a href="#/user">
+        <span class="loginMessage"><span><h2>{{user.username}}</h2></span><span>ver estadísticas</span></span>
+        <img src="{{user.img}}" />
+    </a>
+</div>
+<div id="account" ng-style="{'visibility': not_logged_in}">
+    <a href="#/login">
+        <span class="loginMessage"><span><h2>Inicia</h2></span><span><small>sesión</small></span></span>
+        <img src="images/user.png" />
+    </a>
+</div>
+<div id="title">
+    <header aria-label="Header content" role="banner">
+        <h1 class="titlearea win-type-ellipsis">
+            <button class="win-backbutton" ng-click="goback()"></button>
+            <span class="pagetitle">Detalles</span>
+        </h1>
+    </header>
+</div>
+
+<div id="kcyDetails" class="statsModule">
+    <h2><b>Titulo:&nbsp;</b>{{kcy.title}}</h2>
+    <h3><b>Descripción:&nbsp;</b>{{kcy.description}}</h3>
+    <form action="{{kcy.url}}">
+        <input type="submit" value="Visitar">
+    </form>
+    <br/>
+    <h2><b>Estadísticas:</h2>
+    <span>Kclicks<br />{{kcy.clicks}}</span>
+    <span>Usuarios<br />{{kcy.people.length}}</span>
+</div>

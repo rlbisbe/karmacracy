@@ -1,0 +1,35 @@
+﻿<div id="title">
+    <header id="userTitle" aria-label="Header content" role="banner">
+        <img src="{{user.img}}" />
+        <span class="userMessage">
+            <h1 class="titlearea win-type-ellipsis">
+                <button class="win-backbutton" ng-click="goback()"></button>
+                <span class="pagetitle">{{user.username}}</span>
+            </h1>
+        </span>
+    </header>
+</div>
+<div id="account">
+    <span class="loginMessage"><span><h2>{{user.username}}</h2></span><span>salir</span></span>
+    <img src="{{user.img}}" />
+</div>
+
+<div id="userstats" class="statsModule">
+    <h2>Estadísticas</h2>
+
+    <span>Koi:<br />{{user.stats.koi}}</span>
+    <span>Rank: <br />{{user.kcyrank}}</span>
+    <span>Kcys: <br />{{user.stats.totalkcys}}</span>
+    <span>Nuts: <br />{{user.stats.totalawards}}</span>
+    <span>Kclicks: <br />{{user.stats.totalkclicks}}</span>
+    <span>Palabras:<br />{{user.stats.topwordscount}}</span>
+</div>
+
+<div id="morestats" class="statsModule">
+    <h2>Palabras</h2>
+    <div>
+        <ul>
+            <li ng-repeat="word in user.stats.topwords5">{{word}}</li>
+        </ul>
+    </div>
+</div>

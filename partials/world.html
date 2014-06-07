@@ -1,0 +1,154 @@
+﻿    <div id="account" ng-style="{'visibility': logged_in}">
+        <a href="#/user">
+            <span class="loginMessage"><span><h2>{{user.username}}</h2></span><span>ver estadísticas</span></span>
+            <img src="{{user.img}}" />
+        </a>
+</div>
+    <div id="account" ng-style="{'visibility': not_logged_in}">
+        <a href="javascript:;" ng-click="showLogin()">
+            <span class="loginMessage"><span><h2>Inicia</h2></span><span><small>sesión</small></span></span>
+            <img src="images/user.png" />
+        </a>
+    </div>
+    <div id="title">
+        <header aria-label="Header content" role="banner">
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Karmacracy - World</span>
+            </h1>
+        </header>
+    </div>
+    <div id="firewords">
+
+        <h2>Firewords</h2>
+        <div ng-style="{'visibility': firewords_not_loaded, color:'black'}">
+            <label class="progressRingText">
+                <progress class="win-ring withText"></progress>Cargando Firewords...
+            </label>
+        </div>
+        <div>
+            <span ng-repeat="fireword in firewords">
+                <span ng-style="{'font-size': fireword[3], 'line-height': fireword[3], 'color': fireword[2]}">{{fireword[0]}}</span>
+            </span>
+        </div>
+    </div>
+    <h2 id="main_title">Kcys</h2>
+    <div id="main_loading" ng-style="{'visibility': kcys_not_loaded}">
+    <label class="progressRingText">
+        <progress class="win-ring withText"></progress>Cargando Kcys...
+    </label>
+</div>
+
+    <div id="main-snapped">
+        <ul>
+            <li ng-repeat="kcy in kcys">
+                <a class="link" ng-click="gotoSpecificKcy(kcy)">
+                    <div class="kcyGrid">
+                        <div class="shares">
+                            <p>{{kcy.clicks}}</p>
+                        </div>
+                        <div class="text">
+                            <h1>{{kcy.title}}</h1>
+                        </div>
+                        <div class="sharedby">
+                            <span ng-repeat="person in kcy.people">
+                                <img src="{{person.userimg}}" />
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="main">
+        <ul>
+            <li ng-repeat="kcy in kcys">
+                <a class="link" ng-click="gotoSpecificKcy(kcy)">
+                    <div class="kcyGrid">
+                        <div class="shares">
+                            <p>{{kcy.clicks}}</p>
+                        </div>
+                        <div class="text">
+                            <h1>{{kcy.title}}</h1>
+                        </div>
+                        <div class="sharedby">
+                            <span ng-repeat="person in kcy.people">
+                                <img src="{{person.userimg}}" />
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
+        <button ng-click="refresh(true)" data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{label:'Actualizar',icon:'refresh',
+                section:'global',tooltip:'Actualizar'}"></button>
+
+        <button ng-style="{'visibility': logged_in}" ng-click="share()" data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{id:'cmdCamera',label:'Compartir',icon:'reshare',
+                section:'selection',tooltip:'Compartir'}"></button>
+    </div>
+
+    <div id="loginFlyout" data-win-control="WinJS.UI.Flyout" 
+         data-win-options="{ placement: 'top' }">
+    <form onsubmit="return false;">
+        <p>
+            <label for="url">
+                Nombre de usuario: <br />
+            </label>
+            <input type="text" id="url" ng-model="username"><br/>
+            <label for="url">
+                Contraseña <br />
+            </label>
+            <input type="password" id="url" ng-model="password">
+            <p>{{errors}}</p>
+        </p>
+        <p>
+            <button ng-click="tryLogin()">
+                Iniciar Sesión
+            </button>
+        </p>
+    </form>
+</div>
+
+    <div id="contactFlyout" data-win-control="WinJS.UI.Flyout"
+         data-win-options="{ placement: 'bottom' }">
+        <form onsubmit="return false;">
+            <p>
+                <label for="url">
+                    URL <br />
+                </label>
+                <span id="urlError" class="error"></span>
+                <input type="text" id="url" ng-model="url">
+            </p>
+            <p>
+            <button ng-click="changeUrl()">
+                Generar enlace
+            </button>
+            </p>
+            <p>
+                <label for="username">
+                    Texto a compartir <br />
+                </label>
+                <textarea id="username" ng-model="generatedKcy"></textarea>
+            </p>
+
+            <label for="username">
+                Compartir en: <br />
+            </label>
+            <div ng-repeat="network in networks">
+                <input type="checkbox" ng-model="network.checked" />
+                <label for="username">
+                    ({{network.type | networkFilter }}) {{network.name}} <br />
+                </label>
+            </div>
+            <br/>
+            <button id="submitLoginButton" ng-click="doShare()">
+                Compartir
+            </button>
+        </form> 
+    </div>
